@@ -1,3 +1,4 @@
+//세 수 중 가장 최솟값
 function solution(a, b, c){
   let answer;
   if (a < b) answer = a;
