@@ -4,7 +4,7 @@ function solution(arr) {
     let n = arr.length;
     //sum1 행의 값
     //sum2 열의 값    
-    let sum1 = sum2=0;
+    let sum1 = sum2 =0;
     for (let i =0; i<n; i++){
         sum1=sum2=0;
         for(let j =0; j<n; j++){
