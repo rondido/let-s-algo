@@ -8,7 +8,10 @@ function solution(arr) {
       if (arr[mainindex] > arr[j]) {
         mainindex = j;
       }
-      [arr[i], arr[mainindex]] = [arr[mainindex], arr[i]];
+      //[arr[i], arr[mainindex]] = [arr[mainindex], arr[i]];
+      let swap = arr[mainindex];
+      arr[mainindex] = arr[i];
+      arr[i] = swap;
     }
   }
   return answer;
