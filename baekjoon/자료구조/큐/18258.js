@@ -28,17 +28,17 @@ class Queue {
     this.length += 1;
   }
   pop() {
-    if (this.empty() === 1) return -1;
+    if (this.empty() == 1) return -1;
     const popItem = this.head;
     this.head = this.head.next;
     this.length -= 1;
     return popItem.input;
   }
   size() {
-    return this.length;
+    this.length;
   }
   empty() {
-    if (this.length == 0) {
+    if (this.length === 0) {
       return 1;
     } else {
       return 0;
@@ -46,11 +46,12 @@ class Queue {
   }
   front() {
     if (this.empty() == 1) return -1;
-    return this.head.input;
+    return this.head.item;
   }
+
   back() {
     if (this.empty() == 1) return -1;
-    return this.tail.input;
+    return this.tail.item;
   }
 }
 
