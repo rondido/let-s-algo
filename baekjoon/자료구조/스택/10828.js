@@ -2,40 +2,30 @@ const input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
 
 const num = Number(input[0]);
 
-let answer = [];
+let stack = [];
 
-for (let i = 1; i < num; i++) {
+for (let i = 1; i <= num; i++) {
   let result = input[i].split(" ");
-  console.log(answer);
-  if (result[0] === "push") {
-    answer.push(result[1]);
-  }
+  switch (result[0]) {
+    case "pop":
+      stack.push(stack.pop() || -1);
+      console.log(stack);
+      break;
 
-  if (result[0] === "pop") {
-    if (answer.length === 0) {
-      console.log(-1);
-    } else {
-      console.log(answer.pop());
-    }
-  }
-  if (result[0] === "size") {
-    console.log(answer.length);
-  }
-  if (result[0] === "empty") {
-    if (answer.length === 0) {
-      console.log(1);
-    } else {
-      console.log(0);
-    }
-  }
-  if (result[0] === "top") {
-    let index = 0;
-    if (answer.length === 0) {
-      console.log(-1);
-    } else {
-      index = result.length - 1;
-      console.log(index + "index");
-      console.log(answer[index]);
-    }
+    case "size":
+      stack.push(stack.length);
+      break;
+    case "empty":
+      stack.push(stack[0] ? 0 : 1);
+      break;
+
+    case "top":
+      stack.push(stack[stack.length - 1] || -1);
+      break;
+    default:
+      stack.push(input[i].split(" ")[1]);
+      break;
   }
 }
+
+console.log(stack.join("\n"));
