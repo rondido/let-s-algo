@@ -34,11 +34,11 @@ function solution(n, arr, numbers) {
       const calculatorFunction = calculator[pushValue];
       pushValue = calculatorFunction(firstValue, secoundValue);
     }
-    stack.push();
+    stack.push(pushValue);
   }
   return (Math.floor(stack[0] * 100) / 100).toFixed(2);
 }
 
-const answer = solution(m, arr, numbers);
+const answer = solution(n, arr, numbers);
 
 console.log(answer);
