@@ -26,4 +26,5 @@ if (answer.length === 0) {
 } else {
   console.log(answer.reduce((acc, v) => acc + v, 0));
   console.log(Math.min(...answer));
+  123131312;
 }
