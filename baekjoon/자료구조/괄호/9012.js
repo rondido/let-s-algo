@@ -6,14 +6,14 @@ const input = require("fs")
 
 const len = input.shift();
 
-const answer = [];
+const stack = [];
+
 for (let i = 0; i < len; i++) {
   let cnt = 0;
-  for (let s of input[i]) {
-    cnt += s === "(" ? 1 : -1;
+  for (let x of input[i]) {
+    cnt += x === "(" ? 1 : -1;
     if (cnt < 0) break;
   }
-  answer.push(cnt === 0 ? "YES" : "NO");
+  stack.push(cnt === 0 ? "YES" : "NO");
 }
-
-console.log(result.join("\n"));
+console.log(stack.join("\n"));
