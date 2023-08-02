@@ -1,11 +1,9 @@
-const [n, ...arr] = require("fs")
-  .readFileSync("/dev/stdin")
-  .toString()
-  .split("\n");
+const fs = require("fs");
+const [n, ...arr] = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
 class Node {
-  constructor(input) {
-    this.input = input;
+  constructor(item) {
+    this.item = item;
     this.next = null;
   }
 }
@@ -16,34 +14,40 @@ class Queue {
     this.tail = null;
     this.length = 0;
   }
-  push(input) {
-    const node = new Node(input);
+
+  push(item) {
+    const node = new Node(item);
     if (this.head === null) {
       this.head = node;
       this.head.next = null;
     } else {
       this.tail.next = node;
     }
+
     this.tail = node;
     this.length += 1;
   }
+
   pop() {
     if (this.empty() == 1) return -1;
     const popItem = this.head;
     this.head = this.head.next;
     this.length -= 1;
-    return popItem.input;
+    return popItem.item;
   }
+
   size() {
-    this.length;
+    return this.length;
   }
+
   empty() {
-    if (this.length === 0) {
+    if (this.length == 0) {
       return 1;
     } else {
       return 0;
     }
   }
+
   front() {
     if (this.empty() == 1) return -1;
     return this.head.item;
@@ -57,9 +61,7 @@ class Queue {
 
 let answer = [];
 let queue = new Queue();
-
 const command = arr.map((v) => v.split(" "));
-
 command.forEach((v) => {
   switch (v[0]) {
     case "push":
