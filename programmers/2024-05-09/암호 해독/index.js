@@ -8,3 +8,7 @@ function solution(cipher, code) {
   }
   return answer;
 }
+
+
+// 다른 사람 풀이
+//    return cipher.split('').filter((_, index) => (index + 1) % code === 0).join('');
