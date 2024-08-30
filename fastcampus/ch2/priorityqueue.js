@@ -7,7 +7,7 @@ var queue = new PriorityQueue(function (a, b) {
 queue.enq({ cash: 250, name: "Valentina" });
 queue.enq({ cash: 300, name: "Jano" });
 queue.enq({ cash: 150, name: "Fran" });
-queue.size(); // 3
+queue.size();
 queue.peek(); // { cash: 300, name: 'Jano' }
 queue.deq(); // { cash: 300, name: 'Jano' }
 queue.size(); // 2
