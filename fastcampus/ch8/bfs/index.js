@@ -37,9 +37,14 @@ class Queue {
     if (this.front === this.rear) {
       temp = this.storage[this.front];
       delete this.storage[this.front];
+      // 이 부분이 없었다면 이 시점에서 front는
+      // rear의 값 보다 1보다 더 큰 역설에 빠지게 되므로
+      // 데이터가 없는 경우를 다시 0으로 초기화
       this.front = 0;
       this.rear = 0;
     } else {
+      // 현재 front에 담긴 값을 가져오고
+      //항상 이 값을 delete 해중야 한다.
       temp = this.storage[this.front];
       delete this.storage[this.front];
       this.front += 1;
