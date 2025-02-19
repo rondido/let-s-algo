@@ -22,10 +22,11 @@ for (let tc = 0; tc < testCase; tc++) {
     let data = input[i].split(" ").map(Number);
     arr.push(data);
   }
-  arr.sort((x, y) => x[0] - y[0]);
+  arr.sort((x, y) => x[0] - y[0]); //x를 기준으로 오름차순
   let count = 0;
   let minValue = 100001;
   for (let [x, y] of arr) {
+    // x,y
     if (y < minValue) {
       minValue = y;
       count += 1;
