@@ -30,7 +30,7 @@ function dfs(row) {
     if (!possible(row, i)) continue;
     queens.push([row, i]); //현재 위치에 퀸을 놓기
     dfs(row + 1); //재귀 함수 호출
-    queens.pop(); //현재 ㅜ이치에서 퀸을 제거하기
+    queens.pop(); //현재 위치에서 퀸을 제거하기
   }
 }
 dfs(0);
