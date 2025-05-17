@@ -27,6 +27,7 @@ function dfs(result, depth) {
       str += arr[i] + result[i];
     }
     str += arr[n - 1] + " ";
+    //문자열로 된 js 코드를 실제 계산을 해줌.
     current = eval(str.split(" ").join(""));
 
     if (current == 0) console.log(str);
